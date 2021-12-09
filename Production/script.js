@@ -6,14 +6,13 @@ document.getElementById("formSubmit").addEventListener("submit", function (event
         if (selectedRow == null)
             insertNewRow(work);
         else
-        if (confirm("Êtes-vous sûr de modifier cette œuvre?"))
+        if (confirm("Confirmer que vous voulez modifier cette œuvre?"))
             editRow(work)
         resetForm();
     } else {
-        alert("S'il-vous-plaît remplissez tous les champs requis")
+        alert("Remplissez tous les champs")
     }
 })
-
 function resetForm() {
     document.getElementById("inputTitle").value = "";
     document.getElementById("inputAuthor").value = "";
@@ -23,9 +22,7 @@ function resetForm() {
     document.querySelector('input[name="workType"]:checked').checked = false
     selectedRow = null;
 }
-
 var onEditButton = document.getElemen
-
 function readwork() {
 
     var work = {};
@@ -37,9 +34,6 @@ function readwork() {
     work["type"] = document.querySelector('input[name="workType"]:checked').value
     return work;
 }
-
-
-
 function insertNewRow(work) {
     var tableBody = document.getElementById("worksTable").getElementsByTagName('tbody')[0];
     var newRow = tableBody.insertRow(tableBody.length);
@@ -55,25 +49,20 @@ function insertNewRow(work) {
     cell6 = newRow.insertCell(5)
     cell6.innerHTML = work.type
     cell7 = newRow.insertCell(6)
-
     var editButton = document.createElement("button")
     var deleteButton = document.createElement("button")
-
     var editContent = document.createTextNode("Edit")
     editButton.appendChild(editContent)
     editButton.className = "btn btn-primary me-1"
     editButton.setAttribute('onclick', 'onEdit(this)')
-
     var deleteContent = document.createTextNode('Delete')
     deleteButton.appendChild(deleteContent)
     deleteButton.className = "btn btn-secondary"
     deleteButton.setAttribute("onclick", 'onDelete(this)')
-
     cell7.appendChild(editButton)
     cell7.appendChild(deleteButton)
 
 }
-
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById("inputTitle").value = selectedRow.cells[0].innerHTML;
@@ -99,17 +88,12 @@ function editRow(workToEdit) {
     selectedRow.cells[5].innerHTML = workToEdit.type;
 
 }
-
-
-
 function onDelete(td) {
-    if (confirm("Êtes-vous sûr de supprimer cette œuvre?")) {
+    if (confirm("Sûr vous voulez supprimer cette œuvre!?")) {
         row = td.parentElement.parentElement;
         document.getElementById("worksTable").deleteRow(row.rowIndex)
     }
 }
-
-
 function validate() {
     var isValid = true;
     if (document.getElementById("inputTitle").value == "") {
