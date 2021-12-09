@@ -1,2 +1,2 @@
 # Projet7 Bibliothque
-✔️ Bibliothèque
+✔️ Bibliothèque / Gestion D'ouvrages
