@@ -13,6 +13,7 @@ document.getElementById("formSubmit").addEventListener("submit", function (event
         if (confirm("Confirmer que vous voulez modifier cette œuvre?"))
             editRow(work)
         resetForm();
+        formCard.classList.className = "d-none"
     } else {
         alert("Remplissez tous les champs")
     }

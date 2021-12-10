@@ -50,17 +50,17 @@
                         <!-- <li class="breadcrumb-item"><a href="index.html"></a></li> -->
                         <!-- <li class="breadcrumb-item active">Ouvrages :</li> -->
                     </ol>
-                    <div class="card mb-4">
+                    <div>
+                        <button id="showFormBtn" class="btn btn-primary m-3">+ Nouveau</button>
+                    </div>
+                    <div id="formCard" class="card mb-4 d-none">
 
                         <div class="card-header">
                             <div>📝Ouvrages : </div>
                         </div>
                         <div class="card-body">
-                            <div>
-                                <button id="showFormBtn" class="btn btn-primary m-3">+ Nouveau</button>
-                            </div>
-                            <div id="formCard" class="card mb-4 d-none">
-        
+
+                            <form id="formSubmit"  class="row g-3">
                                 <!--  -->
                                 <div class="col-md-12">
                                     <label for="inputTitle" class="form-label">Titre :</label>
