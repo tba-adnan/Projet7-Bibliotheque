@@ -59,22 +59,22 @@
 
                             <form id="formSubmit"  class="row g-3">
                                 <!--  -->
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label for="inputTitle" class="form-label">Titre :</label>
                                     <input required type="text" class="form-control" id="inputTitle" maxlength="30">
                                 </div>
                                 <!--  -->
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label for="inputAuthor" class="form-label">Auteur : </label>
-                                    <input required type="text" class="form-control" id="inputAuthor" maxlength="30">
+                                    <input required type="text" class="form-control" id="inputAuthor" width="10px" maxlength="30">
                                 </div>
                                 <!--  -->
-                                <div class="col-12">
+                                <div class="col-6">
                                     <label for="inputPrix" class="form-label">Prix : </label>
                                     <input required type="number" step=any  class="form-control" id="inputPrix" maxlength="3">
                                 </div>
                                 <!--  -->
-                                <div class="col-12">
+                                <div class="col-6">
                                     <label for="inputDate" class="form-label">Date de : </label>
                                     <input required type="date" class="form-control" id="inputDate"
                                         placeholder="Apartment, studio, or floor">
@@ -127,11 +127,11 @@
                                 <thead>
                                     <tr>
                                         <th>Titre</th>
-                                        <th>Auteur</th>
-                                        <th>Prix</th>
-                                        <th>Date de publication</th>
+                                        <th class="d-none d-lg-table-cell">Auteur</th>
+                                        <th class="d-none d-lg-table-cell">Prix</th>
+                                        <th class="d-none d-lg-table-cell">Date de publication</th>
                                         <th>Langue</th>
-                                        <th>Type</th>
+                                        <th class="d-none d-lg-table-cell">Type</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
