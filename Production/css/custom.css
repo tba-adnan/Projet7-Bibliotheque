@@ -1,5 +1,5 @@
 .sb-sidenav-menu {
-    background-image: url("/Production/img/main-bg.jpg") !important;
+    background-image: url("../Production/img/main-bg.jpg") !important;
     background-size: cover;
 }
 
