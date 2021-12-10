@@ -13,6 +13,7 @@ document.getElementById("formSubmit").addEventListener("submit", function (event
         alert("Remplissez tous les champs")
     }
 })
+
 function resetForm() {
     document.getElementById("inputTitle").value = "";
     document.getElementById("inputAuthor").value = "";
