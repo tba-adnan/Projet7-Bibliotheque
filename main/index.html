@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Interface de gestion des ouvrages" />
+    <title>GDO v2.0</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://cdn.shopify.com/s/files/1/1061/1924/products/Open_Book_Emoji_large.png"/>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/customStyles.css">
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand  ">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">📘 Gestion d'ouvrages v2.0</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion " id="sidenavAccordion">
+                <div class="sb-sidenav-menu sb-sidenav-custom">
+                    <div class="nav">
+
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-down">
+                    <!-- <div class="small">Logged in as : 🟢 Root</div> -->
+                     
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">📚 Gestion d'ouvrages</h1>
+                    <div>
+                        <button id="showFormBtn" class="btn-custom  m-3 btn-primary-custom">➤  Nouveau</button>
+                    </div>
+                    <div id="formCard" class="card mb-4 d-none">
+
+                        <div class="card-header">
+                            <div>📘Ouvrage</div>
+                        </div>
+                        <div class="card-body">
+                            <form id="formSubmit" class="row g-3">
+                                <div class="col-md-12">
+                                    <label for="inputTitle" class="form-label">Titre</label>
+                                    <input required type="text" maxlength="30" class="form-control" id="inputTitle">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputAuthor" class="form-label">Auteur</label>
+                                    <input required type="text" class="form-control" maxlength="30" id="inputAuthor">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputPrix" class="form-label">Prix</label>
+                                    <input required type="number" step=any class="form-control" id="inputPrix">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputDate" class="form-label">Date de </label>
+                                    <input required type="date" class="form-control" id="inputDate"
+                                        placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLanguage" class="form-label">Langue</label>
+                                    <select required id="inputLanguage" class="form-select">
+                                        <option value="" disabled selected>choisir...</option>
+                                        <option value="français">Français</option>
+                                        <option value="anglais">Anglais</option>
+                                        <option value="arabe">Arabe</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label for="workType" class="form-label">Type</label>
+                                    <div class="form-check">
+                                        <input required class="form-check-input" name="workType" value="Roman"
+                                            type="radio" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            Roman
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input required class="form-check-input" name="workType" value="Essai"
+                                            type="radio" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            Essai
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input required class="form-check-input" name="workType" value="Bande-Dessinée"
+                                            type="radio" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            Bande-Dessinée
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <button id="submitButton" type="submit"
+                                        class="btn btn-primary-custom">Enregistrer</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            📘Ouvrages
+                        </div>
+                        <div class="card-body" id="card-body">
+                            <table class="table" id="worksTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Titre</th>
+                                        <th class="d-none d-lg-table-cell">Auteur</th>
+                                        <th class="d-none d-lg-table-cell">Prix</th>
+                                        <th class="d-none d-lg-table-cell">Date de publication</th>
+                                        <th>Langue</th>
+                                        <th class="d-none d-lg-table-cell">Type</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            <button class="btn-custom btn-secondary-custom" onclick="onPrint()">Print</button>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Gestion d'ouvrages v2.0 2022</div>
+                        <div>
+                            <a class="d-text-one" href="https://getbootstrap.com/">Learn about BootsTrap</a>
+                            &middot;
+                            <a class="d-text-one" href="https://github.com/tebbaa-adnane/">see Github</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="work.js"></script>
+    <script src="workManager.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
